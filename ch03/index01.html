@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ch03 - index01.html 파일</h1>
+
+    <script>
+      // 1. 전역 스코프 : 어떤 중괄호에도 포함되지 않는 가장 바깥 영역
+      const companyName = "코딩 상사";
+
+      function printTeam() {
+        // 2. 함수 스코프 : 함수의 중괄호에 포함. 해당 함수 내에서만 사용 가능
+        const teamName = "개발팀";
+
+        if (true) {
+          // 3. 블록 스코프 : if / for 등의 중괄호에 포함. 해당 중괄호 내에서만 사용 가능
+          const meetingMemo = "회의 메모";
+
+          // 안쪽 -> 바깥 방향으로는 항상 변수를 사용할 수 있음
+          console.log(companyName);
+          console.log(teamName);
+          console.log(meetingMemo);
+        }
+
+        // console.log(meetingMemo); // >> 출력 X
+      }
+      console.log("---------- 함수 바깥쪽 ----------");
+      console.log(companyName);
+      // console.log(teamName);
+      console.log("---------- printTeam() ----------");
+      console.log("------- printTeam() if 문 -------");
+      printTeam();
+
+      const level = "전역";
+      function showLevel() {
+        const level = "함수";
+
+        console.log(level);
+      }
+      console.log("---------- 함수 바깥쪽 ----------");
+      console.log(level);
+      console.log("---------- showLevel() ----------");
+      showLevel();
+    </script>
+  </body>
+</html>

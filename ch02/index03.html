@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ch02 - index03.html 파일</h1>
+
+    <script>
+      console.log("1. --------------- 산술 연산자 ---------------");
+      let a = 10;
+      let b = 3;
+      console.log(a + b); // 13
+      console.log(a - b); // 7
+      console.log(a * b); // 30
+      console.log(a / b); // 3.3333333333333335
+      console.log(a % b); // 1
+
+      console.log("2. --------------- 할당 연산자 ---------------");
+      let point = 100;
+
+      point += 50;
+      console.log(point); // 150
+
+      point -= 30;
+      console.log(point); // 120
+
+      point++;
+      console.log(point); // 121
+
+      point--;
+      console.log(point); // 120
+
+      console.log("3. --------------- 비교 연산자 ---------------");
+      console.log(10 > 5); // true
+      console.log(10 <= 5); // false
+
+      console.log(10 === "10"); // false (타입 구분)
+      console.log(10 == "10"); // true
+
+      console.log(10 != "10"); // false
+      console.log(10 !== "10"); // ture (타입 구분)
+
+      console.log("4. --------------- 논리 연산자 ---------------");
+      console.log(true && false); // false
+      console.log(true || false); // true
+      console.log(!false); // true
+
+      console.log("5. --------------- 연산자 우선 순위 ---------------");
+      console.log(2 + 3 * 4); // 14
+      console.log((2 + 3) * 4); // 20
+    </script>
+  </body>
+</html>

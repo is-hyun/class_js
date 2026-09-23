@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ch03 - index02.html 파일</h1>
+
+    <script>
+      console.log("1. 블록 밖으로 새어 나온다");
+
+      if (true) {
+        var oldStyle = "var로 생성한 변수";
+        let newStyle = "let으로 생성한 변수";
+      }
+
+      console.log("-------- if문 바깥 --------");
+      console.log(oldStyle);
+      // console.log(newStyle); >> 출력 X
+
+      console.log("2. for문에서 특히 위험하다");
+      for (var i = 0; i < 3; i++) {}
+      console.log("-------- for문 종료 --------");
+      console.log(i);
+
+      for (let j = 0; j < 3; j++) {}
+      console.log("-------- for문 종료 --------");
+      // console.log(j); >> 출력 X
+
+      console.log("3. 같은 이름으로 변수를 중복 선언해도 오류 발생 안함");
+      var userName = "홍길동";
+      var userName = "이순신";
+      console.log(userName); // 이순신
+    </script>
+  </body>
+</html>

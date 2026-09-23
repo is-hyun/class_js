@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+        flex-wrap: wrap; /
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: #00ffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ch12 index04.html - 요소 동적 추가</h1>
+
+    <button id="addBtn">아이템 추가</button>
+
+    <div id="container">
+      <div class="box">아이템 1</div>
+      <div class="box">아이템 2</div>
+      <div class="box">아이템 3</div>
+    </div>
+
+    <script>
+      let itemCount = 3;
+
+      const addBtn = document.getElementById("addBtn");
+      const container = document.getElementById("container");
+
+      addBtn.addEventListener("click", () => {
+        itemCount++;
+
+        const newBox = document.createElement("div");
+
+        newBox.className = "box";
+        newBox.textContent = `아이템 ${itemCount}`;
+
+        container.appendChild(newBox);
+      });
+    </script>
+  </body>
+</html>

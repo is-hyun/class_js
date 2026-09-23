@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ch02 - index01.html 파일</h1>
+
+    <script>
+      // 1. let : 변경이 가능한 값을 담음
+      let username = "홍길동";
+      console.log(username);
+
+      username = "김철수"; // let 값을 변경할 수 있다
+      console.log(username);
+
+      // 2. const : 변경이 불가능한 값을 담음 (상수)
+      const PI = 3.14;
+      console.log(PI);
+
+      // PI = 3.141592; // >> const 값은 변경할 수 없다
+
+      // ! 주의 !
+      // 한 페이지 안에서 같은 변수를 선언한다면 오류 발생
+      // let username = "같은 변수 선언";
+      // >> Cannot redeclare block-scoped variable 'username'
+
+      // 3. 변할 수 있는 같은 상자에 다른 종류의 값을 넣을 수 있음
+      let anything = 100;
+      anything = "숫자->문자열로 변경";
+      console.log(anything);
+    </script>
+  </body>
+</html>

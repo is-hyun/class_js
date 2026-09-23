@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ch03 - index03.html 파일</h1>
+
+    <!-- 버튼으로 함수 실행 -->
+    <button onclick="sayHello()">click</button>
+
+    <script>
+      console.log("--------------- 1. var의 호이스팅 ---------------");
+
+      // console.log(abc);
+      console.log(greeting); // undefined : 엔진 실행 전에 var 선언부가 끌어올려지는 호이스팅
+      var greeting = "안녕";
+      console.log(greeting); // 정상 출력
+
+      console.log("----------- 2. let/const의 호이스팅 TDZ -----------");
+      // let과 const에도 호이스팅이 발생하지만 선언 줄에 도달하기 전까지 사용이 금지됨.
+      // TDZ : Temporal Dead Zone. 일시적 사각지대 (금지 구역)
+
+      // console.log(welcome); // 실행 오류 발생
+      // ------ TDZ 구간 ------
+      const welcome = "반가워";
+      console.log(welcome);
+
+      console.log("----------- 3. 함수 선언문의 호이스팅 -----------");
+      // 함수 선언문 : 독립된 하나의 문장. function으로 시작하고 함수명이 포함되는 형식.
+      // 함수 선언문이 호이스팅 되면 선언부 전체와 함수 본문까지 전부 끌어올려진다.
+      // 즉, 함수는 호출문 아래에 정의해도 상관 없음.
+
+      sayHello(); // 정상 실행
+
+      function sayHello() {
+        console.log("안녕하세요");
+      }
+
+      console.log("----------- 4. 함수 표현식의 호이스팅 -----------");
+      // 함수 표현식 : 값의 역할을 대체할 수 있는 function
+      // ! 주의 ! 함수 표현식에는 함수명이 없음
+
+      // sayBye(); // 실행 오류 발생
+      // ------ TDZ 구간 ------
+      const sayBye = function () {
+        console.log("안녕히가세요");
+      };
+      sayBye(); // 정상 실행
+    </script>
+  </body>
+</html>

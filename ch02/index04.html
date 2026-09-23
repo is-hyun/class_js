@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ch02 - index04.html 파일</h1>
+
+    <script>
+      console.log("--------------- 1. 자동 형 변환 ---------------");
+      console.log(100 + 2); // 102
+      console.log(100 + "2"); // 1002 (숫자가 문자로 변환)
+      console.log(100 * "2"); // 200  (문자가 숫자로 변환)
+      console.log(100 - "2"); // 98   (문자가 숫자로 변환)
+      console.log(100 / "2"); // 50   (문자가 숫자로 변환)
+      console.log(100 % "2"); // 0    (문자가 숫자로 변환)
+
+      console.log(100 * "abc"); // NaN - 숫자로 변환 불가능한 문자열
+      console.log(100 + "abc"); // 100abc
+
+      console.log("--------------- 2. 수동 형 변환 ---------------");
+      let priceText = "123";
+      let price = Number(priceText);
+      console.log(typeof priceText); // string
+      console.log(typeof price); // number
+      console.log(price + 100); // 223
+
+      // 숫자로 변환 불가능한 문자를 변환하면 NaN(Not a Number)
+      console.log(Number("abc"));
+
+      // ! 주의 !
+      // 빈 문자열을 숫자로 형변환하면 0이 출력된다.
+      console.log(Number("")); // 0 (Number)
+
+      console.log("----------- 2-1. 수동 형 변환 (숫자 -> 문자) -----------");
+      let count = 456;
+      let countText = String(count);
+      console.log(typeof countText); // string
+      console.log(countText + "개 입니다."); // 456개 입니다.
+
+      console.log("-------- ! 입력창으로 입력 받은 값은 항상 문자열 !  --------");
+      // 입력창으로 받은 값이라고 가정
+      let input1 = "10";
+      let input2 = "20";
+
+      console.log(input1 + input2); //"1020"
+      console.log(Number(input1) + Number(input2)); // 30
+    </script>
+  </body>
+</html>
